@@ -1,0 +1,66 @@
+<div style="font-family:Segoe UI, Open Sans, Arial, Helvetica ">
+   <table style="border: none;border-bottom: 3px solid #3869C4 !important ; padding: 10px 0; ; width: 100%">
+      <tr>
+         <td> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/1200px-IBM_logo.svg.png" style="width: 190px" alt=""></td>
+         <td style="text-align: right; font-weight: bold"> İrsaliyeli Fatura</td>
+      </tr>
+   </table>
+   <table style=" border-collapse: collapse; margin: 30px 0; border: 1px solid #001">
+      <tr style="border: 1px solid #001; background-color: #dedede;font-weight: bold;">
+         <td style="border: 1px solid #001; padding: 10px 20px">Sipariş Numarası:</td>
+         <td style="border: 1px solid #001; padding: 10px 20px">{{OrderNo}}</td>
+      </tr>
+      <tr>
+         <td style="border: 1px solid #001; padding: 10px 20px">Sipariş Tarihi</td>
+         <td style="border: 1px solid #001; padding: 10px 20px">{{dateFormat CreateTs "dd MMMM yyyy dddd"}}</td>
+      </tr>
+      <tr>
+         <td style="border: 1px solid #001; padding: 10px 20px">Teslim Tarihi</td>
+         <td style="border: 1px solid #001; padding: 10px 20px">{{dateFormat DateDelivered "dd/MM/yyyy"}}</td>
+      </tr>
+   </table>
+   <div style="padding-top:40px;font-weight: bold;font-size:25px">Sipariş Listesi</div>
+   <table style="width:100%;font-weight: bold;border-collapse: collapse;">
+      <thead>
+         <tr style="background-color: #dedede">
+            <th style="border: 1px solid black;">Ürün Kodu</th>
+            <th style="border: 1px solid black;">Açıklama</th>
+            <th style="border: 1px solid black;">Miktar</th>
+            <th style="border: 1px solid black;">Ürün Adı</th>
+            <th style="border: 1px solid black;">Sipariş Birim(₺)</th>
+            <th style="border: 1px solid black;">Sipariş Toplam(€)</th>
+         </tr>
+      </thead>
+      <tbody>
+         {{#each OrderItems}}
+         <tr style="font-weight: normal;">
+            <td style="border: 1px solid black; font-weight: bold">{{ProductNo}}</td>
+            <td style="border: 1px solid black;">{{Description}}</td>
+            <td style="border: 1px solid black;">{{Quantity}}</td>
+            <td style="border: 1px solid black;">{{UnitName}}</td>
+            <td style="border: 1px solid black;">{{moneyFormat UnitPriceTl}}</td>
+            <td style="border: 1px solid black;">{{moneyFormat TotalPriceTl}}</td>
+
+         </tr>
+         {{/each}}
+      </tbody>
+      <tfoot>
+         <tr>
+            <td style="border: 1px solid black;" colspan="5">Toplam</td>
+            <td style="border: 1px solid black; background-color: #FFF3CA">{{moneyFormat TotalPriceTl}}</td>
+         </tr>
+      </tfoot>
+   </table>
+   <div style="padding-top:40px;font-weight: bold;font-size:25px">Notlar</div>
+   <table style="border: none; padding: 10px 0; ; width: 100%">
+      <tr>
+         <td> {{Note}}</td>
+      </tr>
+   </table>
+   <table style="border: none;border-top: 3px solid #3869C4 !important ; margin-top: 60px; padding: 10px 0; ; width: 100%">
+      <tr>
+         <td style="text-align: center;"> <b>IBM (International Business Machines)</b><br> Vişnezade Mahallesi, Bayıldım Caddesi, No:6 <br> Maçka, Beşiktaş/İstanbul <br>
+		 <b>Tel:</b> +90-212-227-7133  <b>E-Mail: </b> <a href="#">info@ibm.com/</a> <b>Web: </b> <a href="http://www.ibm.com/" target="blank" style="text-decoration: none !important;">http://www.ibm.com/</a></td>
+      </tr>
+   </table>
+</div>
